@@ -1,5 +1,7 @@
 # [iSpriter](https://github.com/iazrael/ispriter "iSpriter")  GRUNT 插件
 
+	npm install grunt-ispriter
+
 ### iSpriter特性
 > 智能提取 background 的 url 和 position 等信息
 > 
