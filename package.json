@@ -1,0 +1,41 @@
+{
+  "name": "grunt-ispriter",
+  "description": "A grunt plugin to create css sprite with ispriter.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Miser/grunt-ispriter",
+  "author": {
+    "name": "miser",
+    "email": "udmiser@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Miser/grunt-ispriter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Miser/grunt-ispriter/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Miser/grunt-ispriter/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
+    "grunt-ispriter"
+  ],
+  "dependencies": {
+    "ispriter": "~0.3.7"
+  }
+}

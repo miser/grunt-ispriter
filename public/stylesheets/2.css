@@ -1,0 +1,17 @@
+.menu li span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+.menu li span.test1{
+	background-image:url('../images/home_05-10.png');
+}
+.menu li span.test2{
+	background-image:url('../images/home_09-14.png');
+}
+.menu li span.test3{
+	background-image:url('../images/home_10.png');
+}
+.menu li span.test4{
+	background-image:url('../images/home_03-08.png');
+}

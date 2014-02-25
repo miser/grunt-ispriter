@@ -1,0 +1,5 @@
+node_modules
+npm-debug.log
+tmp
+public/spriter_images
+public/spriter_stylesheets
