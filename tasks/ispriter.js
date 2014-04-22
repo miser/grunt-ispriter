@@ -17,42 +17,43 @@ module.exports = function(grunt) {
     grunt.registerMultiTask('ispriter', 'A grunt plugin to create css sprite with ispriter.', function() {
         var that = this;
         var done = this.async();
-
         var options = that.options();
+        var count = 0;
+        var files = this.files;
 
-        function sprite(file) {
-            file.src.filter(function(filepath) {
-                if (!grunt.file.exists(filepath)) {
-                    grunt.log.warn('Source file "' + filepath + '" not found.');
-                    return false;
-                } else {
-                    return true;
-                }
-            }).map(function(filepath) {
-                try {
-                    var config = {};
-                    if (options.imagedist) {
-                        config = {
-                            output: {
-                                'cssDist': file.dest,
-                                'imageDist': options.imagedist
-                            },
-                            input: filepath
-                        }
-                    } else {
-                        config = {
-                            output: file.dest,
-                            input: filepath
-                        }
+        merge();
+
+        function merge() {
+            if (files.length == 0) {
+                done();
+                return;
+            }
+            var file = files.shift();
+            
+            var inputPath = file.src,
+                outputPath = file.dest;
+            try {
+                var config = {};
+                if (file.imagedist) {
+                    config = {
+                        output: {
+                            'cssDist': outputPath,
+                            'imageDist': file.imagedist
+                        },
+                        input: inputPath
                     }
-                    ispriter.run(config);
-                } catch (e) {
-                    grunt.log.writeln(e);
+                } else {
+                    config = {
+                        output: outputPath,
+                        input: inputPath
+                    }
                 }
-                grunt.log.writeln('File "' + file.dest + '" created.');
-            });
+                ispriter.merge(config, function() {
+                    merge();
+                })
+            } catch (e) {
+                grunt.log.writeln(e);
+            }
         }
-        
-        grunt.util.async.forEachSeries(this.files, sprite);
     });
 };
