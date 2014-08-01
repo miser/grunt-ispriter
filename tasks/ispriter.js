@@ -15,11 +15,11 @@ module.exports = function(grunt) {
     // creation: http://gruntjs.com/creating-tasks
 
     grunt.registerMultiTask('ispriter', 'A grunt plugin to create css sprite with ispriter.', function() {
-        var that = this;
         var done = this.async();
-        var options = that.options();
         var count = 0;
         var files = this.files;
+        var imagedist = this.data.imagedist,
+            fileversion = this.data.fileversion;
 
         merge();
 
@@ -29,21 +29,24 @@ module.exports = function(grunt) {
                 return;
             }
             var file = files.shift();
-            
+
             var inputPath = file.src,
                 outputPath = file.dest;
             try {
                 var config = {};
-                if (file.imagedist) {
+                var dist = file.imagedist || imagedist;
+                if (dist) {
                     config = {
+                        fileversion: fileversion,
+                        input: inputPath,
                         output: {
                             'cssDist': outputPath,
-                            'imageDist': file.imagedist
-                        },
-                        input: inputPath
+                            'imageDist': dist
+                        }
                     }
                 } else {
                     config = {
+                        fileversion: fileversion,
                         output: outputPath,
                         input: inputPath
                     }
