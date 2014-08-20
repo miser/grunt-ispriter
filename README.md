@@ -1,8 +1,9 @@
 grunt-ispriter可以方便地通过grunt使用[iSpriter](https://github.com/iazrael/ispriter "iSpriter")
 
-安装：
+[![NPM](https://nodei.co/npm/grunt-ispriter.png?compact=true)](https://nodei.co/npm/grunt-ispriter/)
 
-    npm install grunt-ispriter
+[![NPM](https://nodei.co/npm-dl/grunt-ispriter.png?months=6&height=1)](https://nodei.co/npm/grunt-ispriter/)
+
 
 配置：
 
@@ -38,4 +39,4 @@ or
 License
 =======
 
-[MIT](./LICENSE-MIT)
+[MIT](./LICENSE)
