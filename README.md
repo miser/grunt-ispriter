@@ -39,4 +39,4 @@ or
 License
 =======
 
-[MIT](./LICENSE)
+[MIT](./LICENSE-MIT)
