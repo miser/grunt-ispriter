@@ -1,7 +1,7 @@
 {
   "name": "grunt-ispriter",
   "description": "A grunt plugin to create css sprite with ispriter.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/Miser/grunt-ispriter",
   "author": "miser <udmiser@gmail.com>",
   "repository": {
