@@ -7,7 +7,7 @@
  */
 
 'use strict';
-var ispriter = require('ispriter');
+var ispriter = require('ispriter2');
 
 module.exports = function(grunt) {
 
